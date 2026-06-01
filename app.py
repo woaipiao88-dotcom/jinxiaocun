@@ -382,7 +382,7 @@ def product_detail(item_id):
 @app.route("/api/partners/<kind>", methods=["GET", "POST"])
 def partners(kind):
     if kind not in ("customer", "supplier"):
-        return jsonify({"error": "浼欎即绫诲瀷閿欒"}), 400
+        return jsonify({"error": "伙伴类型错误"}), 400
     db = get_db()
     if request.method == "GET":
         return jsonify(rows("SELECT * FROM partners WHERE active=1 AND type=? ORDER BY code,id", (kind,)))
@@ -399,7 +399,7 @@ def partners(kind):
 @app.route("/api/partners/<kind>/<int:item_id>", methods=["PUT", "DELETE"])
 def partner_detail(kind, item_id):
     if kind not in ("customer", "supplier"):
-        return jsonify({"error": "浼欎即绫诲瀷閿欒"}), 400
+        return jsonify({"error": "伙伴类型错误"}), 400
     db = get_db()
     if request.method == "DELETE":
         used = one("SELECT COUNT(*) AS c FROM documents WHERE partner_id=?", (item_id,))["c"]
@@ -712,7 +712,7 @@ def assistant_search():
 def assistant_summary():
     return jsonify({
         "stock_by_category": rows(
-            """SELECT COALESCE(NULLIF(p.category,''),'鏈垎绫?) AS category,
+            """SELECT COALESCE(NULLIF(p.category,''),'未分类') AS category,
                       COUNT(*) AS product_count,
                       SUM(COALESCE(i.quantity,0)) AS quantity,
                       SUM(COALESCE(i.quantity,0) * COALESCE(i.cost_price,p.cost_price,0)) AS amount

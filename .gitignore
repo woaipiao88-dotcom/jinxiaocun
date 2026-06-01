@@ -1,14 +1,39 @@
-﻿backups/
-build/
-build_new/
-build_new_local/
-dist/
-dist_new/
-data/
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+
+# Local runtime data
+data/
+backups/
 *.db
 *.sqlite
 *.sqlite3
-*.log
+*.bak
+
+# Secrets and local config
 .env
+.env.*
+*.key
+*.pem
+*.crt
+
+# Build artifacts
+build/
+dist/
+*.spec.bak
+
+# Editors and OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Logs
+*.log
+logs/
