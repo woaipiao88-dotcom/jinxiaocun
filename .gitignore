@@ -1,0 +1,14 @@
+﻿backups/
+build/
+build_new/
+build_new_local/
+dist/
+dist_new/
+data/
+__pycache__/
+*.pyc
+*.db
+*.sqlite
+*.sqlite3
+*.log
+.env

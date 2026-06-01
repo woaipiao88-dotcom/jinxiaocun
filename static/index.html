@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>管家婆风格进销存 V2</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">管家婆风格进销存 V2</div>
+    <button onclick="openView('home')">首页</button>
+    <button onclick="openView('purchase_in')">采购入库</button>
+    <button onclick="openView('sale_out')">销售出库</button>
+    <button onclick="openView('inventory')">库存查询</button>
+    <button onclick="openView('history')">业务历史</button>
+    <button onclick="openView('operations')">经营历程</button>
+    <button onclick="openView('template')">打印模板</button>
+    <button onclick="openView('assistant')">数据助手</button>
+    <span id="clock"></span>
+  </div>
+
+  <div class="shell">
+    <div class="sidebar">
+      <button class="big green" onclick="openView('sale_out')"><b>销售单</b><span>销售出库 / 退货</span></button>
+      <button class="big orange" onclick="openView('purchase_in')"><b>进货单</b><span>采购入库 / 退货</span></button>
+      <button class="big blue" onclick="openView('inventory')"><b>库存查询</b><span>库存数量 / 金额</span></button>
+      <button class="big purple" onclick="openView('products')"><b>商品资料</b><span>SKU / 价格 / 下限</span></button>
+      <button class="big cyan" onclick="openView('customers')"><b>客户资料</b><span>联系人 / 电话</span></button>
+      <button class="big gray" onclick="openView('suppliers')"><b>供应商</b><span>往来单位</span></button>
+      <button class="big red" onclick="openView('movements')"><b>库存流水</b><span>每次变化可查</span></button>
+      <button class="big teal" onclick="openView('operations')"><b>经营历程</b><span>保存 / 作废记录</span></button>
+      <button class="big teal" onclick="openView('template')"><b>打印模板</b><span>直接修改打印格式</span></button>
+      <button class="big teal" onclick="openView('assistant')"><b>数据助手</b><span>查找 / 归类 / 接口</span></button>
+      <button class="big dark" onclick="openView('backup')"><b>数据备份</b><span>一键备份数据库</span></button>
+    </div>
+
+    <div class="workspace">
+      <div id="tabs" class="tabs"></div>
+      <div id="view" class="view"></div>
+      <div class="statusbar">
+        <span id="status">准备就绪</span>
+        <span>服务端：<b id="serverText"></b></span>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
