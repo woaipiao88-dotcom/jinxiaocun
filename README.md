@@ -4,6 +4,12 @@
 
 > 当前项目处于早期开源阶段，请先使用演示数据或测试账套验证流程，再用于真实业务。
 
+![系统首页截图](docs/images/homepage.png)
+
+## English Summary
+
+Jinxiaocun is a lightweight Chinese inventory management system for small businesses and LAN deployments. It uses Flask, SQLite, and plain JavaScript, with no frontend build step. It supports products, customers, suppliers, purchase documents, sales documents, stock movements, backups, and assistant-friendly search APIs.
+
 ## 功能特性
 
 - 商品资料、客户资料、供应商资料维护
@@ -108,6 +114,14 @@ curl http://127.0.0.1:5001/api/health
 curl "http://127.0.0.1:5001/api/assistant/search?q=SP001"
 ```
 
+## 测试
+
+运行最小健康检查和核心 API 测试：
+
+```bash
+python -m unittest discover -s tests
+```
+
 ## 项目结构
 
 ```text
@@ -135,6 +149,10 @@ curl "http://127.0.0.1:5001/api/assistant/search?q=SP001"
 - 单据审核流
 - 自动化测试和发布流程
 - 数据库迁移脚本
+
+## 版本记录
+
+版本记录见 [CHANGELOG.md](CHANGELOG.md)。
 
 ## 贡献
 
